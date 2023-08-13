@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "barcode_scanner/wsgi.py",
+        "src": "/barcode_scanner/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
       },
@@ -21,7 +21,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "barcode_scanner/wsgi.py"
+        "dest": "/barcode_scanner/wsgi.py"
       }
     ]
   }
