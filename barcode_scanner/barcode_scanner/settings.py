@@ -24,11 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-e1p#34kco+)j86@#n=f3g&i72^%+8ldpwcibs2%9a$4cu90r1n"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True
 
-ALLOWED_HOSTS = ["192.25.1.3","localhost","127.0.0.1",".vercel.app"]
+
+ALLOWED_HOSTS = ["192.25.1.3","localhost","127.0.0.1",".vercel.app",".now.sh"]
 
 # RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 # if RENDER_EXTERNAL_HOSTNAME:    
@@ -46,7 +45,7 @@ INSTALLED_APPS = [
     'inventory',
     "django_extensions",
     "tailwind",
-    "theme",
+    # "theme",
     "django_browser_reload",
     "widget_tweaks",
     "whitenoise",
@@ -135,14 +134,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "theme/static/"
+# STATIC_URL = "theme/static/"
+
+
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# STATICFILES_DIRS = [ os.path.join(BASE_DIR,"static"), os.path.join(BASE_DIR , "theme/static"),]
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "static/"
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STATICFILES_DIRS = [ os.path.join(BASE_DIR,"static"), os.path.join(BASE_DIR , "theme/static"),]
+STATICFILES_DIRS = os.path.join(BASE_DIR,"static"),
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build','static')
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
