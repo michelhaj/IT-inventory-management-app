@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-e1p#34kco+)j86@#n=f3g&i72^%+8ldpwcibs2%9a$4cu90r1n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ["192.25.1.3","localhost","127.0.0.1"]
+ALLOWED_HOSTS = ["192.25.1.3","localhost","127.0.0.1",".vercel.app"]
 
 # RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 # if RENDER_EXTERNAL_HOSTNAME:    
